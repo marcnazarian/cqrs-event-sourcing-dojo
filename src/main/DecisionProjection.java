@@ -2,34 +2,43 @@ package main;
 
 import main.messageevent.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class DecisionProjection {
 
     private boolean isDeleted;
     private String author;
     private String content;
+    private List<String> reQuackedBy = new ArrayList<>();
+    private int numberOfReQuacks = 0;
 
     DecisionProjection(MessageEventStream history) {
         
         for(MessageEvent event: history.getMessageEvents()) {
             
-            if (event.getClass().equals(MessageDeletedEvent.class))
-            {
-                apply((MessageDeletedEvent)event);
-            }
-
-            if (event.getClass().equals(MessageQuackedEvent.class))
-            {
-                apply((MessageQuackedEvent)event);
-            }
-
-            if (event.getClass().equals(MessageReQuackedEvent.class))
-            {
-                apply((MessageReQuackedEvent)event);
-            }
+            apply(event);
         }
     }
 
-    void apply(MessageDeletedEvent messageDeletedEvent) {
+    void apply(MessageEvent event) {
+        if (event.getClass().equals(MessageDeletedEvent.class))
+        {
+            apply((MessageDeletedEvent)event);
+        }
+
+        if (event.getClass().equals(MessageQuackedEvent.class))
+        {
+            apply((MessageQuackedEvent)event);
+        }
+
+        if (event.getClass().equals(MessageReQuackedEvent.class))
+        {
+            apply((MessageReQuackedEvent)event);
+        }
+    }
+
+    private void apply(MessageDeletedEvent messageDeletedEvent) {
         isDeleted = true;
     }
 
@@ -38,8 +47,9 @@ class DecisionProjection {
         content = messageQuackedEvent.getContent();
     }
 
-    void apply(MessageReQuackedEvent messageReQuackedEvent) {
-        
+    private void apply(MessageReQuackedEvent messageReQuackedEvent) {
+        numberOfReQuacks++;
+        reQuackedBy.add(messageReQuackedEvent.getReQuackedBy());
     }
 
     boolean isDeleted() {
@@ -54,4 +64,11 @@ class DecisionProjection {
         return content;
     }
 
+    int getNumberOfReQuacks() {
+        return numberOfReQuacks;
+    }
+
+    Iterable<String> getRequackedBy() {
+        return reQuackedBy;
+    }
 }

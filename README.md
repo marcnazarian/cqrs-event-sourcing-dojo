@@ -20,7 +20,7 @@ Implement a quacker (tweeter-like)
 * When a user quack a message with some inappropriate content (let's say the 'F' word) Then it should *not* raise anything
 * Only message's authors can delete their messages
 * When a user re-quack a message, Then it should raise a MessageReQuacked event
-
+* When a user re-quack a message, Then it should increment the number of re-quacks
 
 ## Solution proposée par Florent et Emilien (en français)
 

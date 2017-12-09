@@ -4,8 +4,11 @@ import main.Message;
 import main.messageevent.MessageDeletedEvent;
 import main.messageevent.MessageEventStream;
 import main.messageevent.MessageQuackedEvent;
+import main.messageevent.MessageReQuackedEvent;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 import static main.messageevent.MessageDeletedEvent.EVENT_MESSAGE_DELETED;
 import static main.messageevent.MessageQuackedEvent.EVENT_MESSAGE_QUACKED;
@@ -25,7 +28,8 @@ public class MessageShould {
     public void raise_quacked_when_quack() {
         Message message = Message.quack(messageEventStream, "alice","some content");
 
-        assertTrue(messageEventStream.contains(EVENT_MESSAGE_QUACKED));
+        assertContains(messageEventStream, EVENT_MESSAGE_QUACKED);
+
         assertEquals("alice", message.getAuthor());
         assertEquals("some content", message.getContent() );
     }
@@ -37,7 +41,7 @@ public class MessageShould {
                 
         message.delete(messageEventStream, "bob");
 
-        assertTrue(messageEventStream.contains(EVENT_MESSAGE_DELETED));
+        assertContains(messageEventStream, EVENT_MESSAGE_DELETED);
     }
 
     @Test
@@ -66,21 +70,21 @@ public class MessageShould {
     public void not_quack_a_message_with_empty_content() {
         Message.quack(messageEventStream, "bob","");
 
-        assertFalse(messageEventStream.contains(EVENT_MESSAGE_QUACKED));
+        assertDoesNotContain(messageEventStream, EVENT_MESSAGE_QUACKED);
     }
 
     @Test
     public void not_quack_a_message_that_contains_more_than_42_chars() {
         Message.quack(messageEventStream, "carl","abcdefghijklmnopqrstuvwxyz abcdefghijklmnop");
 
-        assertFalse(messageEventStream.contains(EVENT_MESSAGE_QUACKED));
+        assertDoesNotContain(messageEventStream, EVENT_MESSAGE_QUACKED);
     }
 
     @Test
     public void not_quack_a_message_that_contains_f_word() {
         Message.quack(messageEventStream, "dude","seriously dude!what is this f*cking stuff?");
 
-        assertFalse(messageEventStream.contains(EVENT_MESSAGE_QUACKED));
+        assertDoesNotContain(messageEventStream, EVENT_MESSAGE_QUACKED);
     }
 
     @Test
@@ -90,7 +94,7 @@ public class MessageShould {
 
         message.delete(messageEventStream, "bob");
 
-        assertFalse(messageEventStream.contains(EVENT_MESSAGE_DELETED));
+        assertDoesNotContain(messageEventStream, EVENT_MESSAGE_DELETED);
     }
 
     @Test
@@ -100,7 +104,7 @@ public class MessageShould {
 
         Message reQuackedMessage = message.reQuack(messageEventStream, "franck");
 
-        assertTrue(messageEventStream.contains(EVENT_MESSAGE_REQUACKED));
+        assertContains(messageEventStream, EVENT_MESSAGE_REQUACKED);
         assertEquals("franck", reQuackedMessage.getAuthor());
         assertEquals("RQ: some awesome content", reQuackedMessage.getContent());
     }
@@ -112,6 +116,34 @@ public class MessageShould {
 
         message.reQuack(messageEventStream, "god");
 
-        assertFalse(messageEventStream.contains(EVENT_MESSAGE_REQUACKED));
+        assertDoesNotContain(messageEventStream, EVENT_MESSAGE_REQUACKED);
     }
+
+    @Test
+    public void increment_the_number_of_re_quacks_and_update_list_of_re_quackers_when_requack() {
+        messageEventStream.add(new MessageQuackedEvent("helen","super inspiring message"));
+        messageEventStream.add(new MessageReQuackedEvent("ian"));
+        messageEventStream.add(new MessageReQuackedEvent("jane"));
+        messageEventStream.add(new MessageReQuackedEvent("ken"));
+        Message message = new Message(messageEventStream);
+
+        message.reQuack(messageEventStream, "laura");
+
+        assertContains(messageEventStream, EVENT_MESSAGE_REQUACKED, 4);
+        assertEquals(4, message.getNumberOfReQuacks());
+        assertEquals(Arrays.asList("ian", "jane", "ken", "laura"), message.getReQuackedBy());
+    }
+
+    private static void assertContains(MessageEventStream messageEventStream, String eventName) {
+        assertTrue(messageEventStream.contains(eventName));
+    }
+
+    private static void assertContains(MessageEventStream messageEventStream, String eventName, int nbOccurences) {
+        assertTrue(messageEventStream.containsExactly(eventName, nbOccurences));
+    }
+
+    private static void assertDoesNotContain(MessageEventStream messageEventStream, String eventName) {
+        assertFalse(messageEventStream.contains(eventName));
+    }
+
 }

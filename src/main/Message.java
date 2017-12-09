@@ -38,24 +38,23 @@ public class Message {
             return;
         }
 
-        MessageDeletedEvent messageDeletedEvent = new MessageDeletedEvent();
-        history.add(messageDeletedEvent);
-        decisionProjection.apply(messageDeletedEvent);
+        publishAndApply(new MessageDeletedEvent());
     }
 
     public Message reQuack(MessageEventStream history, String reQuackAuthor) {
         if (decisionProjection.getAuthor().equals(reQuackAuthor)) {
             return null;
         }
+                                                                
+        publishAndApply(new MessageReQuackedEvent(reQuackAuthor));
 
         String reQuackedContent = "RQ: " + getContent();
+        return Message.quack(new MessageEventStream(), reQuackAuthor, reQuackedContent);
+    }
 
-        MessageReQuackedEvent messageReQuackedEvent = new MessageReQuackedEvent(reQuackAuthor, decisionProjection.getAuthor(), reQuackedContent);
-        history.add(messageReQuackedEvent);
-        decisionProjection.apply(messageReQuackedEvent);
-
-        MessageEventStream reQuackedMessageHistory = new MessageEventStream();
-        return Message.quack(reQuackedMessageHistory, reQuackAuthor, reQuackedContent);
+    private void publishAndApply(MessageEvent messageEvent) {
+        history.add(messageEvent);
+        decisionProjection.apply(messageEvent);
     }
 
     public String getAuthor() {
@@ -66,4 +65,11 @@ public class Message {
         return decisionProjection.getContent();
     }
 
+    public int getNumberOfReQuacks() {
+        return decisionProjection.getNumberOfReQuacks();
+    }
+
+    public Iterable<String> getReQuackedBy() {
+        return decisionProjection.getRequackedBy();
+    }
 }

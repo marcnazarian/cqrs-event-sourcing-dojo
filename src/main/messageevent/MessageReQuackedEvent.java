@@ -4,7 +4,14 @@ public class MessageReQuackedEvent extends MessageEvent {
 
     public static final String EVENT_MESSAGE_REQUACKED = "MessageReQuacked";
 
-    public MessageReQuackedEvent(String reQuacker, String author, String content) {
+    private final String reQuackedBy;
+
+    public MessageReQuackedEvent(String reQuackedBy) {
         super(EVENT_MESSAGE_REQUACKED);
+        this.reQuackedBy = reQuackedBy;
+    }
+
+    public String getReQuackedBy() {
+        return reQuackedBy;
     }
 }
