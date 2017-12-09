@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4757ff5-1ee7-4309-939c-a493ccaecdb7" name="Default" comment="Refactored assertions">
+    <list default="true" id="f4757ff5-1ee7-4309-939c-a493ccaecdb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/DecisionProjection.java" afterPath="$PROJECT_DIR$/src/main/DecisionProjection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Message.java" afterPath="$PROJECT_DIR$/src/main/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" afterPath="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" afterPath="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/MessageShould.java" afterPath="$PROJECT_DIR$/src/test/MessageShould.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageShould.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageShould.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="504">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,10 +151,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DecisionProjection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DecisionProjection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/DecisionProjection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="242">
               <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -233,10 +229,10 @@
         <option value="$PROJECT_DIR$/src/main/Message.java" />
         <option value="/usr/lib/jvm/java-8-openjdk-i386/jre/lib/rt.jar!/java/util/Collection.class" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" />
-        <option value="$PROJECT_DIR$/src/test/MessageShould.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java" />
         <option value="$PROJECT_DIR$/src/main/DecisionProjection.java" />
+        <option value="$PROJECT_DIR$/src/test/MessageShould.java" />
       </list>
     </option>
   </component>
@@ -532,16 +528,17 @@
       <option name="project" value="LOCAL" />
       <updated>1512860632045</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactored assertions">
+      <created>1512861898834</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1512861898834</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MessageShould - 2017.12.09 at 23h 25m 15s.xml">
-      <configuration name="MessageShould" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MessageShould - 2017.12.09 at 23h 37m 43s.xml">
-      <configuration name="MessageShould" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MessageShould - 2017.12.09 at 23h 40m 18s.xml">
       <configuration name="MessageShould" configurationId="JUnit" />
     </history-entry>
@@ -566,19 +563,25 @@
     <history-entry file="MessageShould - 2017.12.10 at 00h 23m 10s.xml">
       <configuration name="MessageShould" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MessageShould - 2017.12.10 at 00h 25m 20s.xml">
+      <configuration name="MessageShould" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MessageShould - 2017.12.10 at 00h 31m 11s.xml">
+      <configuration name="MessageShould" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="52" width="1871" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30470347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30470347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -861,17 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageDeletedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding>
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -935,19 +927,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/DecisionProjection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="242">
           <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -957,6 +939,27 @@
             <element signature="e#1614#1615#0" expanded="true" />
             <element signature="e#1655#1656#0" expanded="true" />
             <element signature="e#1689#1690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageDeletedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding>
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

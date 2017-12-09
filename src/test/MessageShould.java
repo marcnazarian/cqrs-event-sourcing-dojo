@@ -28,7 +28,7 @@ public class MessageShould {
 
         assertContains(messageEventStream, EVENT_MESSAGE_QUACKED);
 
-        assert message != null;
+        assertNotNull(message);
         assertEquals("alice", message.getAuthor());
         assertEquals("some content", message.getContent() );
     }
