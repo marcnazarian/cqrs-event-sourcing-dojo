@@ -4,10 +4,7 @@ public class MessageDeletedEvent extends MessageEvent {
 
     public static final String EVENT_MESSAGE_DELETED = "MessageDeleted";
 
-    private final String deletedBy;
-
-    public MessageDeletedEvent(String deletedBy) {
+    public MessageDeletedEvent() {
         super(EVENT_MESSAGE_DELETED);
-        this.deletedBy = deletedBy;
     }
 }

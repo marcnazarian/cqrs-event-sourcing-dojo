@@ -6,25 +6,23 @@ public class Message {
 
     private static final int MAX_SIZE_OF_QUACK = 42;
     private static final CharSequence THE_F_WORD = "f*ck";
-    
-    private final String author;
-    private final String content;
-    private final MessageEvents messageEvents;
 
-    private Message(String author, String content, MessageEvents messageEvents) {
-        this.author = author;
-        this.content = content;
-        this.messageEvents = messageEvents;
+    private final MessageEventStream history;
+    private DecisionProjection decisionProjection;
+
+    public Message(MessageEventStream history) {
+        this.history = history;
+        this.decisionProjection = new DecisionProjection(history);
     }
 
-    public static Message quack(String author, String content, MessageEvents messageEvents) {
+    public static Message quack(MessageEventStream history, String author, String content) {
         if (isQuackNotValid(content)) {
             return null;
         }
 
-        Message message = new Message(author, content, messageEvents);
-        message.raiseEvent(new MessageQuackedEvent(author, content));
-        return message;
+        history.add(new MessageQuackedEvent(author, content));
+
+        return new Message(history);
     }
 
     private static boolean isQuackNotValid(String content) {
@@ -35,35 +33,22 @@ public class Message {
         return content.length() > MAX_SIZE_OF_QUACK;
     }
 
-    private void raiseEvent(MessageEvent messageEvent) {
-        messageEvents.add(messageEvent);
-    }
-
-    public void delete(String deletedBy) {
-        if (hasBeenDeleted() || isDeletedBySomeoneElseThanAuthor(deletedBy)) {
+    public void delete(MessageEventStream history) {
+        if (decisionProjection.isDeleted()) {
             return;
         }
-        raiseEvent(new MessageDeletedEvent(deletedBy));
+
+        MessageDeletedEvent messageDeletedEvent = new MessageDeletedEvent();
+        history.add(messageDeletedEvent);
+        decisionProjection.apply(messageDeletedEvent);
     }
 
-    private boolean hasBeenDeleted() {
-        return messageEvents.contains(MessageDeletedEvent.EVENT_MESSAGE_DELETED);
+
+    public String getAuthor() {
+        return decisionProjection.getAuthor();
     }
 
-    private boolean isDeletedBySomeoneElseThanAuthor(String deletedBy) {
-        return !author.equals(deletedBy);
-    }
-
-    public Message reQuack(String author, MessageEvents messageEvents) {
-        if (this.author.equals(author)) {
-            return null;
-        }
-        
-        String reQuackedContent = "RQ: " + this.content;
-        Message reQuackedMessage = quack(author, reQuackedContent, messageEvents);
-
-        this.raiseEvent(new MessageReQuackedEvent(this.author, this.content));
-        
-        return reQuackedMessage;
+    public String getContent() {
+        return decisionProjection.getContent();
     }
 }
