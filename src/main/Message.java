@@ -44,6 +44,10 @@ public class Message {
     }
 
     public Message reQuack(MessageEventStream history, String reQuackAuthor) {
+        if (decisionProjection.getAuthor().equals(reQuackAuthor)) {
+            return null;
+        }
+
         String reQuackedContent = "RQ: " + getContent();
 
         MessageReQuackedEvent messageReQuackedEvent = new MessageReQuackedEvent(reQuackAuthor, decisionProjection.getAuthor(), reQuackedContent);

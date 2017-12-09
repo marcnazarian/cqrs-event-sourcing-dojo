@@ -104,4 +104,14 @@ public class MessageShould {
         assertEquals("franck", reQuackedMessage.getAuthor());
         assertEquals("RQ: some awesome content", reQuackedMessage.getContent());
     }
+
+    @Test
+    public void not_allow_re_quack_of_your_own_messages() {
+        messageEventStream.add(new MessageQuackedEvent("god","my ultimate message"));
+        Message message = new Message(messageEventStream);
+
+        message.reQuack(messageEventStream, "god");
+
+        assertFalse(messageEventStream.contains(EVENT_MESSAGE_REQUACKED));
+    }
 }
