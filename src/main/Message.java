@@ -33,8 +33,8 @@ public class Message {
         return content.length() > MAX_SIZE_OF_QUACK;
     }
 
-    public void delete(MessageEventStream history) {
-        if (decisionProjection.isDeleted()) {
+    public void delete(MessageEventStream history, String deleter) {
+        if (decisionProjection.isDeleted() || !decisionProjection.getAuthor().equals(deleter)) {
             return;
         }
 
@@ -43,6 +43,16 @@ public class Message {
         decisionProjection.apply(messageDeletedEvent);
     }
 
+    public Message reQuack(MessageEventStream history, String reQuackAuthor) {
+        String reQuackedContent = "RQ: " + getContent();
+
+        MessageReQuackedEvent messageReQuackedEvent = new MessageReQuackedEvent(reQuackAuthor, decisionProjection.getAuthor(), reQuackedContent);
+        history.add(messageReQuackedEvent);
+        decisionProjection.apply(messageReQuackedEvent);
+
+        MessageEventStream reQuackedMessageHistory = new MessageEventStream();
+        return Message.quack(reQuackedMessageHistory, reQuackAuthor, reQuackedContent);
+    }
 
     public String getAuthor() {
         return decisionProjection.getAuthor();
@@ -51,4 +61,5 @@ public class Message {
     public String getContent() {
         return decisionProjection.getContent();
     }
+
 }

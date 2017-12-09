@@ -1,9 +1,6 @@
 package main;
 
-import main.messageevent.MessageDeletedEvent;
-import main.messageevent.MessageEvent;
-import main.messageevent.MessageEventStream;
-import main.messageevent.MessageQuackedEvent;
+import main.messageevent.*;
 
 class DecisionProjection {
 
@@ -24,6 +21,11 @@ class DecisionProjection {
             {
                 apply((MessageQuackedEvent)event);
             }
+
+            if (event.getClass().equals(MessageReQuackedEvent.class))
+            {
+                apply((MessageReQuackedEvent)event);
+            }
         }
     }
 
@@ -34,6 +36,10 @@ class DecisionProjection {
     private void apply(MessageQuackedEvent messageQuackedEvent) {
         author = messageQuackedEvent.getAuthor();
         content = messageQuackedEvent.getContent();
+    }
+
+    void apply(MessageReQuackedEvent messageReQuackedEvent) {
+        
     }
 
     boolean isDeleted() {
@@ -47,4 +53,5 @@ class DecisionProjection {
     String getContent() {
         return content;
     }
+
 }
