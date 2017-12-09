@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4757ff5-1ee7-4309-939c-a493ccaecdb7" name="Default" comment="Add feature: when user re-quack a message, number of re-quacks is incremented and list of re-quack-ers is updated.&#10;&#10;Refactored as well">
+    <list default="true" id="f4757ff5-1ee7-4309-939c-a493ccaecdb7" name="Default" comment="Refactored assertions">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/DecisionProjection.java" afterPath="$PROJECT_DIR$/src/main/DecisionProjection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Message.java" afterPath="$PROJECT_DIR$/src/main/Message.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" afterPath="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" afterPath="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java" afterPath="$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/MessageShould.java" afterPath="$PROJECT_DIR$/src/test/MessageShould.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -63,13 +62,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageShould.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageShould.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="140" column="100" lean-forward="false" selection-start-line="140" selection-start-column="100" selection-end-line="140" selection-end-column="100" />
+            <state relative-caret-position="522">
+              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageDeletedEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageDeletedEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <folding>
+                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,18 +90,14 @@
       <file leaf-file-name="MessageEventStream.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="252">
+              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#338#339#0" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#484#485#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,7 +106,7 @@
       <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
+            <state relative-caret-position="736">
               <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
               <folding>
                 <element signature="e#1888#1889#0" expanded="true" />
@@ -117,8 +125,8 @@
       <file leaf-file-name="MessageReQuackedEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="288">
+              <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding>
                 <element signature="e#381#382#0" expanded="true" />
                 <element signature="e#415#416#0" expanded="true" />
@@ -147,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DecisionProjection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DecisionProjection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/DecisionProjection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+            <state relative-caret-position="201">
+              <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#994#995#0" expanded="true" />
@@ -169,12 +177,12 @@
         <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEvent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding>
-                <element signature="e#133#134#0" expanded="true" />
-                <element signature="e#165#166#0" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+                <element signature="e#189#190#0" expanded="true" />
+                <element signature="e#216#217#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -216,18 +224,18 @@
         <option value="$PROJECT_DIR$/src/main/MessageEvents.java" />
         <option value="$PROJECT_DIR$/src/main/EmptyMessage.java" />
         <option value="$PROJECT_DIR$/src/main/MessageRequackedEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageRequackedEvent.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageDeletedEvent.java" />
         <option value="$PROJECT_DIR$/src/test/MessageTest.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageQuackedEvent.java" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageEvents.java" />
-        <option value="$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/Message.java" />
+        <option value="/usr/lib/jvm/java-8-openjdk-i386/jre/lib/rt.jar!/java/util/Collection.class" />
         <option value="$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java" />
         <option value="$PROJECT_DIR$/src/test/MessageShould.java" />
-        <option value="/usr/lib/jvm/java-8-openjdk-i386/jre/lib/rt.jar!/java/util/Collection.class" />
+        <option value="$PROJECT_DIR$/src/main/messageevent/MessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java" />
         <option value="$PROJECT_DIR$/src/main/DecisionProjection.java" />
       </list>
     </option>
@@ -517,16 +525,17 @@
       <option name="project" value="LOCAL" />
       <updated>1512856760007</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add feature: when user re-quack a message, number of re-quacks is incremented and list of re-quack-ers is updated.&#10;&#10;Refactored as well">
+      <created>1512860632045</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1512860632045</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MessageShould - 2017.12.09 at 23h 00m 04s.xml">
-      <configuration name="MessageShould" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MessageShould - 2017.12.09 at 23h 07m 17s.xml">
-      <configuration name="MessageShould" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MessageShould - 2017.12.09 at 23h 25m 15s.xml">
       <configuration name="MessageShould" configurationId="JUnit" />
     </history-entry>
@@ -549,6 +558,12 @@
       <configuration name="MessageShould" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MessageShould - 2017.12.09 at 23h 59m 57s.xml">
+      <configuration name="MessageShould" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MessageShould - 2017.12.10 at 00h 18m 18s.xml">
+      <configuration name="MessageShould" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MessageShould - 2017.12.10 at 00h 23m 10s.xml">
       <configuration name="MessageShould" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -592,7 +607,8 @@
     <MESSAGE value="Add 1 constraint: user cannot re-quack its own messages" />
     <MESSAGE value="Update README" />
     <MESSAGE value="Add feature: when user re-quack a message, number of re-quacks is incremented and list of re-quack-ers is updated.&#10;&#10;Refactored as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add feature: when user re-quack a message, number of re-quacks is incremented and list of re-quack-ers is updated.&#10;&#10;Refactored as well" />
+    <MESSAGE value="Refactored assertions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored assertions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,10 +649,10 @@
         <state relative-caret-position="36">
           <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#133#134#0" expanded="true" />
-            <element signature="e#165#166#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -829,6 +845,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/EmptyMessage.java" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="82" lean-forward="false" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-i386/jre/lib/rt.jar!/java/util/Collection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageDeletedEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -843,12 +875,26 @@
     <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
-            <element signature="e#133#134#0" expanded="true" />
-            <element signature="e#165#166#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -863,8 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageReQuackedEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="288">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding>
             <element signature="e#381#382#0" expanded="true" />
             <element signature="e#415#416#0" expanded="true" />
@@ -872,17 +918,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="82" lean-forward="false" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="736">
           <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
           <folding>
             <element signature="e#1888#1889#0" expanded="true" />
@@ -897,36 +935,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-i386/jre/lib/rt.jar!/java/util/Collection.class">
+    <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/messageevent/MessageEventStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="522">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/DecisionProjection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        <state relative-caret-position="201">
+          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#994#995#0" expanded="true" />
@@ -935,16 +957,6 @@
             <element signature="e#1614#1615#0" expanded="true" />
             <element signature="e#1655#1656#0" expanded="true" />
             <element signature="e#1689#1690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MessageShould.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="140" column="100" lean-forward="false" selection-start-line="140" selection-start-column="100" selection-end-line="140" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

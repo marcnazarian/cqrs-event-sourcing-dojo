@@ -68,7 +68,7 @@ class DecisionProjection {
         return numberOfReQuacks;
     }
 
-    Iterable<String> getRequackedBy() {
+    Iterable<String> getReQuackedBy() {
         return reQuackedBy;
     }
 }

@@ -1,14 +1,12 @@
 package test;
 
 import main.Message;
-import main.messageevent.MessageDeletedEvent;
-import main.messageevent.MessageEventStream;
-import main.messageevent.MessageQuackedEvent;
-import main.messageevent.MessageReQuackedEvent;
+import main.messageevent.*;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 import static main.messageevent.MessageDeletedEvent.EVENT_MESSAGE_DELETED;
 import static main.messageevent.MessageQuackedEvent.EVENT_MESSAGE_QUACKED;
@@ -30,6 +28,7 @@ public class MessageShould {
 
         assertContains(messageEventStream, EVENT_MESSAGE_QUACKED);
 
+        assert message != null;
         assertEquals("alice", message.getAuthor());
         assertEquals("some content", message.getContent() );
     }
@@ -52,7 +51,7 @@ public class MessageShould {
 
         message.delete(messageEventStream, "alice");
 
-        assertTrue(messageEventStream.containsOnlyOnce(EVENT_MESSAGE_DELETED));
+        assertContainsOnlyOne(messageEventStream, EVENT_MESSAGE_DELETED);
     }
 
     @Test
@@ -63,7 +62,7 @@ public class MessageShould {
         message.delete(messageEventStream, "alice");
         message.delete(messageEventStream, "alice");
 
-        assertTrue(messageEventStream.containsOnlyOnce(EVENT_MESSAGE_DELETED));
+        assertContainsOnlyOne(messageEventStream, EVENT_MESSAGE_DELETED);
     }
 
     @Test
@@ -135,15 +134,22 @@ public class MessageShould {
     }
 
     private static void assertContains(MessageEventStream messageEventStream, String eventName) {
-        assertTrue(messageEventStream.contains(eventName));
+        assertTrue(getNumberOfEventsNamed(messageEventStream.getMessageEvents(), eventName) >= 1);
     }
 
-    private static void assertContains(MessageEventStream messageEventStream, String eventName, int nbOccurences) {
-        assertTrue(messageEventStream.containsExactly(eventName, nbOccurences));
+    private void assertContainsOnlyOne(MessageEventStream messageEventStream, String eventName) {
+        assertContains(messageEventStream, eventName, 1);
+    }
+
+    private static void assertContains(MessageEventStream messageEventStream, String eventName, int nbOccurrences) {
+        assertEquals(nbOccurrences, getNumberOfEventsNamed(messageEventStream.getMessageEvents(), eventName));
     }
 
     private static void assertDoesNotContain(MessageEventStream messageEventStream, String eventName) {
-        assertFalse(messageEventStream.contains(eventName));
+        assertEquals(0, getNumberOfEventsNamed(messageEventStream.getMessageEvents(), eventName));
     }
 
+    private static long getNumberOfEventsNamed(Collection<MessageEvent> messageEvents, String eventName) {
+        return messageEvents.stream().filter(e->e.getName().equals(eventName)).count();
+    }
 }

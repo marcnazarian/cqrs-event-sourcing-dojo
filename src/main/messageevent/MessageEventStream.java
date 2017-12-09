@@ -1,6 +1,7 @@
 package main.messageevent;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MessageEventStream {
@@ -11,24 +12,8 @@ public class MessageEventStream {
         messageEvents.add(messageEvent);
     }
 
-    public Iterable<MessageEvent> getMessageEvents() {
+    public Collection<MessageEvent> getMessageEvents() {
         return messageEvents;
-    }
-
-    public boolean contains(String eventName) {
-        return getNumberOfEventsNamed(eventName) >= 1;
-    }
-
-    public boolean containsExactly(String eventName, int nbOccurences) {
-        return getNumberOfEventsNamed(eventName) == nbOccurences;
-    }
-
-    public boolean containsOnlyOnce(String eventName) {
-        return containsExactly(eventName, 1);
-    }
-
-    private long getNumberOfEventsNamed(String eventName) {
-        return messageEvents.stream().filter(e->e.getName().equals(eventName)).count();
     }
 
 }

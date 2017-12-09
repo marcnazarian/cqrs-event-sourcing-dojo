@@ -70,6 +70,6 @@ public class Message {
     }
 
     public Iterable<String> getReQuackedBy() {
-        return decisionProjection.getRequackedBy();
+        return decisionProjection.getReQuackedBy();
     }
 }

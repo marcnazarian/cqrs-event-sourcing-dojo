@@ -4,7 +4,7 @@ public abstract class MessageEvent {
     
     private String name;
 
-    public MessageEvent(String name) {
+    MessageEvent(String name) {
         this.name = name;
     }
 
